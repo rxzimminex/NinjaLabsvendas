@@ -1,0 +1,40 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f2f2f2;
+  color: #333;
+  text-align: center;
+}
+header {
+  background: #6a0dad;
+  color: white;
+  padding: 1rem;
+}
+.planos {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 2rem auto;
+  max-width: 400px;
+}
+.plano {
+  background: white;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.plano a {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: #6a0dad;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+}
+footer {
+  margin-top: 2rem;
+  padding: 1rem;
+  background: #e0e0e0;
+}

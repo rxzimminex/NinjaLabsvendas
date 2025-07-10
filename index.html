@@ -1,32 +1,127 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<!DOCTYPE html><html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>InsanityUp - Seguidores Instagram & TikTok</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>InsanityUp - Planos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+    }
+    body {
+      background: #0f172a;
+      color: #fff;
+      padding: 2rem;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+    }
+    header p {
+      margin-top: 0.5rem;
+      color: #cbd5e1;
+    }
+    .plans {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .plan {
+      background: #1e293b;
+      border-radius: 1rem;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
+    .plan:hover {
+      transform: scale(1.05);
+    }
+    .plan h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .price {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      color: #38bdf8;
+    }
+    .features {
+      list-style: none;
+      text-align: left;
+      margin: 1rem 0;
+    }
+    .features li {
+      margin-bottom: 0.5rem;
+    }
+    .btn {
+      display: inline-block;
+      background: #38bdf8;
+      color: #0f172a;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background: #0ea5e9;
+    }
+    footer {
+      margin-top: 3rem;
+      text-align: center;
+      font-size: 0.875rem;
+      color: #94a3b8;
+    }
+  </style>
 </head>
 <body>
   <header>
     <h1>InsanityUp</h1>
-    <p>Compre seguidores para Instagram e TikTok!</p>
-  </header>
-  <main>
-    <section class="planos">
-      <div class="plano">
-        <h2>Instagram - 100 Seguidores</h2>
-        <p>R$ 5,00</p>
-        <a href="https://wa.me/5500000000000?text=Olá,%20quero%20comprar%20100%20seguidores%20Instagram." target="_blank">Comprar</a>
-      </div>
-      <div class="plano">
-        <h2>TikTok - 100 Seguidores</h2>
-        <p>R$ 5,00</p>
-        <a href="https://wa.me/5500000000000?text=Olá,%20quero%20comprar%20100%20seguidores%20TikTok." target="_blank">Comprar</a>
-      </div>
-    </section>
-  </main>
-  <footer>
-    <p>&copy; 2025 InsanityUp</p>
+    <p>Escolha o plano ideal para turbinar sua produtividade</p>
+  </header>  <section class="plans">
+    <div class="plan">
+      <h2>Gratuito</h2>
+      <p class="price">R$ 0/mês</p>
+      <ul class="features">
+        <li>✓ Acesso básico à plataforma</li>
+        <li>✓ 5 projetos por mês</li>
+        <li>✓ Suporte via e-mail</li>
+      </ul>
+      <a href="#" class="btn">Começar grátis</a>
+    </div>
+    <div class="plan">
+      <h2>Pro</h2>
+      <p class="price">R$ 29/mês</p>
+      <ul class="features">
+        <li>✓ Projetos ilimitados</li>
+        <li>✓ Acesso a recursos premium</li>
+        <li>✓ Suporte prioritário</li>
+      </ul>
+      <a href="#" class="btn">Assinar Pro</a>
+    </div>
+    <div class="plan">
+      <h2>Premium</h2>
+      <p class="price">R$ 59/mês</p>
+      <ul class="features">
+        <li>✓ Tudo do Pro</li>
+        <li>✓ Consultoria personalizada</li>
+        <li>✓ Acesso antecipado a novidades</li>
+      </ul>
+      <a href="#" class="btn">Assinar Premium</a>
+    </div>
+  </section>  <footer>
+    © 2025 InsanityUp. Todos os direitos reservados.
   </footer>
 </body>
 </html>

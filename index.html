@@ -4,137 +4,127 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ninja Sites - Cresça seu negócio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-  <style>
-    body { margin:0; font-family:'Inter', sans-serif; background: linear-gradient(135deg, #1E3A8A, #3B82F6); color: white; }
-    header { display: flex; align-items: center; padding: 2rem; }
-    header img { width: 50px; height: 50px; margin-right: 1rem; }
-    h1 { font-size: 2rem; font-weight: 800; }
-    .plans { display: flex; justify-content: center; gap: 2rem; padding: 2rem; flex-wrap: wrap; }
-    .card { background: white; color: #1F2937; padding: 2rem; border-radius: 1rem; box-shadow: 0 4px 20px rgba(0,0,0,0.2); width: 300px; transition: transform 0.3s ease, box-shadow 0.3s ease; }
-    .card:hover { transform: scale(1.05); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
-    .badge { background: #FACC15; color: black; font-size: 0.75rem; font-weight: bold; padding: 0.25rem 0.5rem; border-radius: 9999px; display: inline-block; margin-bottom: 1rem; }
-    .price { font-size: 2rem; font-weight: bold; margin: 1rem 0; }
-    .btn { display: inline-block; background: linear-gradient(90deg, #10B981, #22D3EE); color: white; padding: 0.75rem 1.5rem; border-radius: 9999px; text-decoration: none; font-weight: 600; transition: transform 0.3s ease, box-shadow 0.3s ease; }
-    .btn:hover { transform: scale(1.05); box-shadow: 0 8px 20px rgba(16,185,129,0.4); }
-    .support { text-align: center; padding: 2rem; }
-    .support a { display: inline-block; margin: 0.5rem; background: #F97316; color: white; padding: 0.75rem 1.5rem; border-radius: 9999px; font-weight: bold; text-decoration: none; transition: background 0.3s ease; }
-    .support a:hover { background: #EA580C; }
-    .socials { text-align: center; padding: 1rem 2rem; }
-    .socials button { background: #ffa41b; border: none; color: white; font-weight: bold; padding: 0.75rem 1.5rem; border-radius: 9999px; cursor: pointer; transition: background 0.3s ease; }
-    .socials button:hover { background: #F97316; }
-    .social-links { margin-top: 1rem; display: none; flex-direction: column; gap: 0.5rem; }
-    .social-links a { color: white; text-decoration: underline; }
-    .auth { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; padding: 2rem; }
-    .auth .card { background: white; color: #1F2937; padding: 2rem; border-radius: 1rem; box-shadow: 0 4px 20px rgba(0,0,0,0.1); width: 300px; }
-    .auth input { display: block; width: 100%; margin: 0.5rem 0; padding: 0.75rem; border: 1px solid #ccc; border-radius: 0.5rem; }
-    .auth button { background: linear-gradient(90deg, #10B981, #22D3EE); color: white; padding: 0.75rem; width: 100%; border: none; border-radius: 9999px; font-weight: bold; cursor: pointer; margin-top: 0.5rem; }
-    .auth button:hover { opacity: 0.9; }
-    footer { text-align: center; padding: 1rem; font-size: 0.9rem; background: rgba(0,0,0,0.2); }
-  </style>
+  <link href="style.css" rel="stylesheet" />  <script>
+    // Remove a flag de login sempre que a página carrega
+    localStorage.removeItem('loggedIn');
+
+    // Verifica login antes de renderizar
+    if (localStorage.getItem('loggedIn') !== 'true') {
+      document.documentElement.innerHTML = `
+        <section class="auth">
+          <div class="card">
+            <h2>Cadastre-se</h2>
+            <form id="signupForm">
+              <input type="text" name="name" placeholder="Nome" required>
+              <input type="email" name="email" placeholder="E-mail" required>
+              <input type="password" name="password" placeholder="Senha" required>
+              <button type="submit">Criar Conta</button>
+            </form>
+          </div>
+          <div class="card">
+            <h2>Login</h2>
+            <form id="loginForm">
+              <input type="email" name="email" placeholder="E-mail" required>
+              <input type="password" name="password" placeholder="Senha" required>
+              <button type="submit">Entrar</button>
+            </form>
+          </div>
+        </section>
+
+        <style>
+          body { background: linear-gradient(135deg, #1E3A8A, #3B82F6); font-family: 'Inter', sans-serif; color: #1F2937; }
+          .auth { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; padding: 2rem; }
+          .auth .card { background: #fff; padding: 2rem; border-radius: 1rem; box-shadow: 0 4px 20px rgba(0,0,0,0.1); width: 300px; }
+          .auth input { display: block; width: 100%; margin: 0.5rem 0; padding: 0.75rem; border: 1px solid #ccc; border-radius: 0.5rem; }
+          .auth button { background: linear-gradient(90deg, #10B981, #22D3EE); color: #fff; padding: 0.75rem; width: 100%; border: none; border-radius: 9999px; font-weight: bold; cursor: pointer; margin-top: 0.5rem; }
+          .auth button:hover { opacity: 0.9; }
+        </style><script>
+      function isStrongPassword(password) {
+        const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[!@#$%^&*()_+\-={}\[\]:;\"'<>,.?/]).{8,}$/;
+        return regex.test(password);
+      }
+
+      document.getElementById('signupForm').onsubmit = (e) => {
+        e.preventDefault();
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+
+        if (!isStrongPassword(password)) {
+          alert('A senha deve ter pelo menos 8 caracteres, incluindo maiúscula, minúscula, número e caractere especial.');
+          return;
+        }
+
+        localStorage.setItem('loggedIn', 'true');
+        localStorage.setItem('userEmail', email);
+        location.reload();
+      };
+
+      document.getElementById('loginForm').onsubmit = (e) => {
+        e.preventDefault();
+        localStorage.setItem('loggedIn', 'true');
+        location.reload();
+      };
+    </script>
+  `;
+}
+
+  </script>
 </head>
 <body>
-  <!-- LOGIN / CADASTRO -->
-  <section class="auth" id="authSection">
-    <div class="card">
-      <h2>Cadastre-se</h2>
-      <form id="signupForm">
-        <input type="text" name="name" placeholder="Nome" required>
-        <input type="email" name="email" placeholder="E-mail" required>
-        <input type="password" name="password" placeholder="Senha" required>
-        <button type="submit">Criar Conta</button>
-      </form>
+  <header>
+    <img src="logo-ninja.png" alt="Logo Ninja">
+    <h1>Cresça seu negócio com a Ninja</h1>
+  </header>
+  <section class="plans">
+    <div class="card" data-aos="fade-up">
+      <span class="badge">ALUNO</span>
+      <p>Website institucional com até 3 páginas, responsivo e otimizado para SEO.</p>
+      <p class="price"><span style="text-decoration: line-through; color: #9CA3AF;">R$ 29,90</span> <span style="margin-left: 0.5rem;">R$ 23,70/Mês</span></p>
+      <a href="https://wa.me/message/VFKB3THTP2G5I1" class="btn" target="_blank">Escolher Plano</a>
     </div>
-    <div class="card">
-      <h2>Login</h2>
-      <form id="loginForm">
-        <input type="email" name="email" placeholder="E-mail" required>
-        <input type="password" name="password" placeholder="Senha" required>
-        <button type="submit">Entrar</button>
-      </form>
+    <div class="card" data-aos="fade-up" data-aos-delay="100">
+      <span class="badge">AVANÇADO</span>
+      <p>Website completo com até 6 páginas, blog integrado e integrações com redes sociais.</p>
+      <p class="price"><span style="text-decoration: line-through; color: #9CA3AF;">R$ 65,00</span> <span style="margin-left: 0.5rem;">R$ 50,00/Mês</span></p>
+      <a href="https://wa.me/message/VFKB3THTP2G5I1" class="btn" target="_blank">Escolher Plano</a>
     </div>
-  </section>  <!-- CONTEÚDO PRINCIPAL -->  <div id="mainContent" style="display:none;">
-    <header>
-      <img src="logo-ninja.png" alt="Logo Ninja">
-      <h1>Cresça seu negócio com a Ninja</h1>
-    </header>
-    <section class="plans">
-      <div class="card" data-aos="fade-up">
-        <span class="badge">ALUNO</span>
-        <p>Website institucional com até 3 páginas, responsivo e otimizado para SEO.</p>
-        <p class="price"><span style="text-decoration: line-through; color: #9CA3AF;">R$ 29,90</span> <span style="margin-left: 0.5rem;">R$ 23,70/Mês</span></p>
-        <a href="https://wa.me/message/VFKB3THTP2G5I1" class="btn" target="_blank">Escolher Plano</a>
-      </div>
-      <div class="card" data-aos="fade-up" data-aos-delay="100">
-        <span class="badge">AVANÇADO</span>
-        <p>Website completo com até 6 páginas, blog integrado e integrações com redes sociais.</p>
-        <p class="price"><span style="text-decoration: line-through; color: #9CA3AF;">R$ 65,00</span> <span style="margin-left: 0.5rem;">R$ 50,00/Mês</span></p>
-        <a href="https://wa.me/message/VFKB3THTP2G5I1" class="btn" target="_blank">Escolher Plano</a>
-      </div>
-      <div class="card" data-aos="fade-up" data-aos-delay="200">
-        <span class="badge">MESTRE</span>
-        <p>Website personalizado, sistema de agendamento e área de login exclusiva.</p>
-        <p class="price"><span style="text-decoration: line-through; color: #9CA3AF;">R$ 90,00</span> <span style="margin-left: 0.5rem;">R$ 72,50/Mês</span></p>
-        <a href="https://wa.me/message/VFKB3THTP2G5I1" class="btn" target="_blank">Escolher Plano</a>
-      </div>
-      <div class="card" data-aos="fade-up" data-aos-delay="300">
-        <span class="badge">SENSEI</span>
-        <p>Website personalizado permanente com tudo incluso.</p>
-        <p class="price"><span style="text-decoration: line-through; color: #9CA3AF;">R$ 120,00</span> <span style="margin-left: 0.5rem;">R$ 95,00/Perm</span></p>
-        <a href="https://wa.me/message/VFKB3THTP2G5I1" class="btn" target="_blank">Escolher Plano</a>
-      </div>
-    </section>
-    <section class="support">
-      <h2>Precisa de ajuda?</h2>
-      <a href="mailto:ninjalabs.nl@gmail.com">Suporte por E-mail</a>
-      <a href="https://wa.me/5512982509357" target="_blank">Suporte via WhatsApp</a>
-    </section>
-    <section class="socials">
-      <button onclick="toggleSocials()">Redes Sociais</button>
-      <div class="social-links" id="socialLinks">
-        <a href="https://www.instagram.com/ninjalabssites?igsh=Mmx6YTU3M3h0ZDh2" target="_blank">Instagram NinjaLabs</a>
-        <a href="https://www.facebook.com" target="_blank">Instagram mangá</a>
-        <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
-        <a href="https://www.twitter.com" target="_blank">Twitter</a>
-      </div>
-    </section>
-    <footer>
-      ninjaLabs, ajudas e relevância todo dia
-    </footer>
-  </div>
+    <div class="card" data-aos="fade-up" data-aos-delay="200">
+      <span class="badge">MESTRE</span>
+      <p>Website personalizado, sistema de agendamento e área de login exclusiva.</p>
+      <p class="price"><span style="text-decoration: line-through; color: #9CA3AF;">R$ 90,00</span> <span style="margin-left: 0.5rem;">R$ 72,50/Mês</span></p>
+      <a href="https://wa.me/message/VFKB3THTP2G5I1" class="btn" target="_blank">Escolher Plano</a>
+    </div>
+    <div class="card" data-aos="fade-up" data-aos-delay="300">
+      <span class="badge">SENSEI</span>
+      <p>Website personalizado permanente com tudo incluso.</p>
+      <p class="price"><span style="text-decoration: line-through; color: #9CA3AF;">R$ 120,00</span> <span style="margin-left: 0.5rem;">R$ 95,00/Perm</span></p>
+      <a href="https://wa.me/message/VFKB3THTP2G5I1" class="btn" target="_blank">Escolher Plano</a>
+    </div>
+  </section>
+  <section class="support">
+    <h2>Precisa de ajuda?</h2>
+    <a href="mailto:ninjalabs.nl@gmail.com">Suporte por E-mail</a>
+    <a href="https://wa.me/5512982509357" target="_blank">Suporte via WhatsApp</a>
+  </section>
+  <section class="socials">
+    <button onclick="toggleSocials()">Redes Sociais</button>
+    <div class="social-links" id="socialLinks">
+      <a href="https://www.instagram.com/ninjalabssites?igsh=Mmx6YTU3M3h0ZDh2" target="_blank">Instagram NinjaLabs</a>
+      <a href="https://www.facebook.com" target="_blank">Instagram mangá</a>
+      <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+      <a href="https://www.twitter.com" target="_blank">Twitter</a>
+    </div>
+  </section>
+  <footer>
+    ninjaLabs, ajudas e relevância todo dia
+  </footer>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init();
     function toggleSocials() {
       const links = document.getElementById('socialLinks');
-      if (links.style.display === 'flex') {
-        links.style.display = 'none';
-      } else {
-        links.style.display = 'flex';
-      }
+      links.style.display = links.style.display === 'flex' ? 'none' : 'flex';
     }
-    const signupForm = document.getElementById('signupForm');
-    const loginForm = document.getElementById('loginForm');signupForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-  localStorage.setItem('loggedIn', 'true');
-  showContent();
-});
-
-loginForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-  localStorage.setItem('loggedIn', 'true');
-  showContent();
-});
-
-function showContent() {
-  document.getElementById('authSection').style.display = 'none';
-  document.getElementById('mainContent').style.display = 'block';
-}
-
-if (localStorage.getItem('loggedIn') === 'true') {
-  showContent();
-}
-
   </script>
 </body>
 </html>

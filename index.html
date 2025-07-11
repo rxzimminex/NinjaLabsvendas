@@ -1,64 +1,110 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>NinjaLabs | Cresça seu negócio</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ninjaLabs · Cresça seu negócio com a ninja</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; color: #333; }
+    header { background: #0047b3; color: white; padding: 20px; text-align: center; }
+    header h1 { margin: 0; font-size: 2em; }
+    header p { margin: 5px 0 0; font-size: 1.2em; }
+    section { padding: 40px 20px; max-width: 1000px; margin: auto; }
+    .plans { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
+    .plan { border: 1px solid #ddd; border-radius: 8px; padding: 20px; flex: 1 1 280px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    .plan h2 { margin-top: 0; color: #0047b3; }
+    .plan ul { list-style: none; padding: 0; }
+    .plan ul li { margin: 8px 0; }
+    .plan .price { font-size: 1.8em; margin: 10px 0; }
+    .cta { margin-top: 15px; text-align: center; }
+    .cta button { background: #0047b3; color: white; border: none; padding: 12px 24px; border-radius: 4px; font-size: 1em; cursor: pointer; }
+    footer { background: #f8f8f8; color: #555; text-align: center; padding: 20px; margin-top: 40px; }
+    .features { display: flex; flex-wrap: wrap; gap: 15px; }
+    .feature { flex: 1 1 200px; text-align: center; }
+    .feature-icon { font-size: 2em; color: #0047b3; margin-bottom: 8px; }
+  </style>
 </head>
 <body>
-  <header>
-    <div class="container">
-      <h1 class="logo">NinjaLabs</h1>
-      <p class="slogan">Venha crescer seu negócio com a ninja</p>
-    </div>
-  </header>
 
-  <section class="hero">
-    <div class="container">
-      <h2>Impulsione seu negócio com tecnologia e marketing de ponta</h2>
-      <p>Sites, lojas virtuais, automações, consultorias e muito mais. Tudo em um só lugar.</p>
-      <a href="#contato" class="btn">Fale com a gente</a>
-    </div>
-  </section>
+<header>
+  <h1>ninjaLabs</h1>
+  <p>cresça seu negócio com a ninja</p>
+</header>
 
-  <section class="servicos">
-    <div class="container">
-      <h2>Nossos Serviços</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>Criação de Sites</h3>
-          <p>Sites rápidos, bonitos e otimizados para vendas.</p>
-        </div>
-        <div class="card">
-          <h3>Marketing Digital</h3>
-          <p>Tráfego pago, SEO, redes sociais e estratégias de crescimento.</p>
-        </div>
-        <div class="card">
-          <h3>Automação</h3>
-          <p>Processos automáticos que economizam tempo e aumentam resultados.</p>
-        </div>
+<section>
+  <h2>Nossos Planos</h2>
+  <div class="plans">
+    <div class="plan">
+      <h2>Aprendiz</h2>
+      <p class="price">R$ 97 / mês</p>
+      <ul>
+        <li>Até 500 contatos</li>
+        <li>Automações básicas</li>
+        <li>Relatórios simples</li>
+        <li>Chatbot Ninja – não incluso</li>
+        <li>Suporte prioritário – não incluso</li>
+      </ul>
+      <div class="cta">
+        <button>Começar agora</button>
       </div>
     </div>
-  </section>
-
-  <section id="contato" class="contato">
-    <div class="container">
-      <h2>Contato e Suporte</h2>
-      <p>Estamos prontos para ajudar você a crescer!</p>
+    <div class="plan">
+      <h2>Sensei <strong>(mais popular)</strong></h2>
+      <p class="price">R$ 197 / mês</p>
       <ul>
-        <li>Email: <a href="mailto:xonebeastxx@gmail.com">xonebeastxx@gmail.com</a></li>
-        <li>WhatsApp: <a href="https://wa.me/5512982509357" target="_blank">+55 12 98250-9357</a></li>
+        <li>Até 5.000 contatos</li>
+        <li>Automações avançadas</li>
+        <li>Relatórios detalhados</li>
+        <li>Chatbot Ninja</li>
+        <li>Suporte prioritário</li>
       </ul>
+      <div class="cta">
+        <button>Começar agora</button>
+      </div>
     </div>
-  </section>
-
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 NinjaLabs. Todos os direitos reservados.</p>
+    <div class="plan">
+      <h2>Mestre</h2>
+      <p class="price">R$ 497 / mês</p>
+      <ul>
+        <li>Contatos ilimitados</li>
+        <li>Automações premium</li>
+        <li>Relatórios avançados</li>
+        <li>Chatbot Ninja Pro</li>
+        <li>Suporte 24/7</li>
+      </ul>
+      <div class="cta">
+        <button>Começar agora</button>
+      </div>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <script src="script.js"></script>
+<section>
+  <h2>Ferramentas Poderosas</h2>
+  <div class="features">
+    <div class="feature">
+      <div class="feature-icon">⚡</div>
+      <p><strong>Automação Ninja</strong><br>Automatize seus processos de vendas e ganhe tempo para focar no que realmente importa.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">📊</div>
+      <p><strong>Análises Poderosas</strong><br>Relatórios detalhados para decisões estratégicas como um mestre ninja.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🤖</div>
+      <p><strong>Chatbot Ninja</strong><br>Atendimento automático 24/7 que nunca dorme e converte como um verdadeiro shinobi.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🔗</div>
+      <p><strong>Integração Total</strong><br>Conecte suas ferramentas favoritas e crie um dojo de vendas completo.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Suporte: <a href="mailto:xonebeastxx@gmail.com">xonebeastxx@gmail.com</a> · WhatsApp: +55 12 98250‑9357</p>
+  <p>&copy; 2025 ninjaLabs. Todos os direitos reservados.</p>
+</footer>
+
 </body>
 </html>

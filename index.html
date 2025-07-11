@@ -5,72 +5,71 @@
   <title>Ninja Sites - Cresça seu negócio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
   <link href="style.css" rel="stylesheet" />  <script>
-    // Remove a flag de login sempre que a página carrega
+    // Sempre limpa a flag para exigir login a cada visita
     localStorage.removeItem('loggedIn');
 
-    // Verifica login antes de renderizar
     if (localStorage.getItem('loggedIn') !== 'true') {
       document.documentElement.innerHTML = `
-        <section class="auth">
-          <div class="card">
-            <h2>Cadastre-se</h2>
-            <form id="signupForm">
-              <input type="text" name="name" placeholder="Nome" required>
-              <input type="email" name="email" placeholder="E-mail" required>
-              <input type="password" name="password" placeholder="Senha" required>
-              <button type="submit">Criar Conta</button>
-            </form>
-          </div>
-          <div class="card">
-            <h2>Login</h2>
-            <form id="loginForm">
-              <input type="email" name="email" placeholder="E-mail" required>
-              <input type="password" name="password" placeholder="Senha" required>
-              <button type="submit">Entrar</button>
-            </form>
-          </div>
-        </section>
+        <body>
+          <header>
+            <img src="logo-ninja.png" alt="Logo Ninja">
+            <h1>Cresça seu negócio com a Ninja</h1>
+          </header>
+          <section class="auth">
+            <div class="card">
+              <h2>Cadastre-se</h2>
+              <form id="signupForm">
+                <input type="text" name="name" placeholder="Nome" required>
+                <input type="email" name="email" placeholder="E-mail" required>
+                <input type="password" name="password" placeholder="Senha" required>
+                <button type="submit">Criar Conta</button>
+              </form>
+            </div>
+            <div class="card">
+              <h2>Login</h2>
+              <form id="loginForm">
+                <input type="email" name="email" placeholder="E-mail" required>
+                <input type="password" name="password" placeholder="Senha" required>
+                <button type="submit">Entrar</button>
+              </form>
+            </div>
+          </section>
 
-        <style>
-          body { background: linear-gradient(135deg, #1E3A8A, #3B82F6); font-family: 'Inter', sans-serif; color: #1F2937; }
-          .auth { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; padding: 2rem; }
-          .auth .card { background: #fff; padding: 2rem; border-radius: 1rem; box-shadow: 0 4px 20px rgba(0,0,0,0.1); width: 300px; }
-          .auth input { display: block; width: 100%; margin: 0.5rem 0; padding: 0.75rem; border: 1px solid #ccc; border-radius: 0.5rem; }
-          .auth button { background: linear-gradient(90deg, #10B981, #22D3EE); color: #fff; padding: 0.75rem; width: 100%; border: none; border-radius: 9999px; font-weight: bold; cursor: pointer; margin-top: 0.5rem; }
-          .auth button:hover { opacity: 0.9; }
-        </style><script>
-      function isStrongPassword(password) {
-        const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[!@#$%^&*()_+\-={}\[\]:;\"'<>,.?/]).{8,}$/;
-        return regex.test(password);
-      }
+          <footer>
+            ninjaLabs, ajudas e relevância todo dia
+          </footer>
 
-      document.getElementById('signupForm').onsubmit = (e) => {
-        e.preventDefault();
-        const email = e.target.email.value;
-        const password = e.target.password.value;
+          <script>
+            function isStrongPassword(password) {
+              const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[!@#$%^&*()_+\-={}\[\]:;\"'<>,.?/]).{8,}$/;
+              return regex.test(password);
+            }
 
-        if (!isStrongPassword(password)) {
-          alert('A senha deve ter pelo menos 8 caracteres, incluindo maiúscula, minúscula, número e caractere especial.');
-          return;
-        }
+            document.getElementById('signupForm').onsubmit = (e) => {
+              e.preventDefault();
+              const email = e.target.email.value;
+              const password = e.target.password.value;
 
-        localStorage.setItem('loggedIn', 'true');
-        localStorage.setItem('userEmail', email);
-        location.reload();
-      };
+              if (!isStrongPassword(password)) {
+                alert('A senha deve ter pelo menos 8 caracteres, incluindo maiúscula, minúscula, número e caractere especial.');
+                return;
+              }
 
-      document.getElementById('loginForm').onsubmit = (e) => {
-        e.preventDefault();
-        localStorage.setItem('loggedIn', 'true');
-        location.reload();
-      };
-    </script>
+              localStorage.setItem('loggedIn', 'true');
+              location.reload();
+            };
+
+            document.getElementById('loginForm').onsubmit = (e) => {
+              e.preventDefault();
+              localStorage.setItem('loggedIn', 'true');
+              location.reload();
+            };
+          </script></body>
   `;
 }
 
   </script>
-</head>
-<body>
+</head><body>
   <header>
     <img src="logo-ninja.png" alt="Logo Ninja">
     <h1>Cresça seu negócio com a Ninja</h1>

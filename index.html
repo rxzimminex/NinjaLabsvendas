@@ -1,10 +1,10 @@
 <!DOCTYPE html><html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ninja Sites - Cresça seu negócio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <style>
     body { margin:0; font-family:'Inter', sans-serif; background: linear-gradient(135deg, #1E3A8A, #3B82F6); color: white; }
     header { display: flex; align-items: center; padding: 2rem; }
@@ -34,37 +34,8 @@
   </style>
 </head>
 <body>
-  <header>
-    <img src="logo-ninja.png" alt="Logo Ninja">
-    <h1>Cresça seu negócio com a Ninja</h1>
-  </header>
-  <section class="plans">
-    <div class="card" data-aos="fade-up">
-      <span class="badge">ALUNO</span>
-      <p>Website institucional com até 3 páginas, responsivo e otimizado para SEO.</p>
-      <p class="price"><span style="text-decoration: line-through; color: #9CA3AF;">R$ 29,90</span> <span style="margin-left: 0.5rem;">R$ 23,70/Mês</span></p>
-      <a href="https://wa.me/message/VFKB3THTP2G5I1" class="btn" target="_blank">Escolher Plano</a>
-    </div>
-    <div class="card" data-aos="fade-up" data-aos-delay="100">
-      <span class="badge">AVANÇADO</span>
-      <p>Website completo com até 6 páginas, blog integrado e integrações com redes sociais.</p>
-      <p class="price"><span style="text-decoration: line-through; color: #9CA3AF;">R$ 65,00</span> <span style="margin-left: 0.5rem;">R$ 50,00/Mês</span></p>
-      <a href="https://wa.me/message/VFKB3THTP2G5I1" class="btn" target="_blank">Escolher Plano</a>
-    </div>
-    <div class="card" data-aos="fade-up" data-aos-delay="200">
-      <span class="badge">MESTRE</span>
-      <p>Website personalizado, sistema de agendamento e área de login exclusiva.</p>
-      <p class="price"><span style="text-decoration: line-through; color: #9CA3AF;">R$ 90,00</span> <span style="margin-left: 0.5rem;">R$ 72,50/Mês</span></p>
-      <a href="https://wa.me/message/VFKB3THTP2G5I1" class="btn" target="_blank">Escolher Plano</a>
-    </div>
-    <div class="card" data-aos="fade-up" data-aos-delay="300">
-      <span class="badge">SENSEI</span>
-      <p>Website personalizado permanente com tudo incluso.</p>
-      <p class="price"><span style="text-decoration: line-through; color: #9CA3AF;">R$ 120,00</span> <span style="margin-left: 0.5rem;">R$ 95,00/Perm</span></p>
-      <a href="https://wa.me/message/VFKB3THTP2G5I1" class="btn" target="_blank">Escolher Plano</a>
-    </div>
-  </section>
-  <section class="auth">
+  <!-- LOGIN / CADASTRO -->
+  <section class="auth" id="authSection">
     <div class="card">
       <h2>Cadastre-se</h2>
       <form id="signupForm">
@@ -82,24 +53,55 @@
         <button type="submit">Entrar</button>
       </form>
     </div>
-  </section>
-  <section class="support">
-    <h2>Precisa de ajuda?</h2>
-    <a href="mailto:ninjalabs.nl@gmail.com">Suporte por E-mail</a>
-    <a href="https://wa.me/5512982509357" target="_blank">Suporte via WhatsApp</a>
-  </section>
-  <section class="socials">
-    <button onclick="toggleSocials()">Redes Sociais</button>
-    <div class="social-links" id="socialLinks">
-      <a href="https://www.instagram.com/ninjalabssites?igsh=Mmx6YTU3M3h0ZDh2" target="_blank">Instagram NinjaLabs</a>
-      <a href="https://www.facebook.com" target="_blank">Instagram mangá</a>
-      <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
-      <a href="https://www.twitter.com" target="_blank">Twitter</a>
-    </div>
-  </section>
-  <footer>
-    ninjaLabs, ajudas e relevância todo dia
-  </footer>
+  </section>  <!-- CONTEÚDO PRINCIPAL -->  <div id="mainContent" style="display:none;">
+    <header>
+      <img src="logo-ninja.png" alt="Logo Ninja">
+      <h1>Cresça seu negócio com a Ninja</h1>
+    </header>
+    <section class="plans">
+      <div class="card" data-aos="fade-up">
+        <span class="badge">ALUNO</span>
+        <p>Website institucional com até 3 páginas, responsivo e otimizado para SEO.</p>
+        <p class="price"><span style="text-decoration: line-through; color: #9CA3AF;">R$ 29,90</span> <span style="margin-left: 0.5rem;">R$ 23,70/Mês</span></p>
+        <a href="https://wa.me/message/VFKB3THTP2G5I1" class="btn" target="_blank">Escolher Plano</a>
+      </div>
+      <div class="card" data-aos="fade-up" data-aos-delay="100">
+        <span class="badge">AVANÇADO</span>
+        <p>Website completo com até 6 páginas, blog integrado e integrações com redes sociais.</p>
+        <p class="price"><span style="text-decoration: line-through; color: #9CA3AF;">R$ 65,00</span> <span style="margin-left: 0.5rem;">R$ 50,00/Mês</span></p>
+        <a href="https://wa.me/message/VFKB3THTP2G5I1" class="btn" target="_blank">Escolher Plano</a>
+      </div>
+      <div class="card" data-aos="fade-up" data-aos-delay="200">
+        <span class="badge">MESTRE</span>
+        <p>Website personalizado, sistema de agendamento e área de login exclusiva.</p>
+        <p class="price"><span style="text-decoration: line-through; color: #9CA3AF;">R$ 90,00</span> <span style="margin-left: 0.5rem;">R$ 72,50/Mês</span></p>
+        <a href="https://wa.me/message/VFKB3THTP2G5I1" class="btn" target="_blank">Escolher Plano</a>
+      </div>
+      <div class="card" data-aos="fade-up" data-aos-delay="300">
+        <span class="badge">SENSEI</span>
+        <p>Website personalizado permanente com tudo incluso.</p>
+        <p class="price"><span style="text-decoration: line-through; color: #9CA3AF;">R$ 120,00</span> <span style="margin-left: 0.5rem;">R$ 95,00/Perm</span></p>
+        <a href="https://wa.me/message/VFKB3THTP2G5I1" class="btn" target="_blank">Escolher Plano</a>
+      </div>
+    </section>
+    <section class="support">
+      <h2>Precisa de ajuda?</h2>
+      <a href="mailto:ninjalabs.nl@gmail.com">Suporte por E-mail</a>
+      <a href="https://wa.me/5512982509357" target="_blank">Suporte via WhatsApp</a>
+    </section>
+    <section class="socials">
+      <button onclick="toggleSocials()">Redes Sociais</button>
+      <div class="social-links" id="socialLinks">
+        <a href="https://www.instagram.com/ninjalabssites?igsh=Mmx6YTU3M3h0ZDh2" target="_blank">Instagram NinjaLabs</a>
+        <a href="https://www.facebook.com" target="_blank">Instagram mangá</a>
+        <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+        <a href="https://www.twitter.com" target="_blank">Twitter</a>
+      </div>
+    </section>
+    <footer>
+      ninjaLabs, ajudas e relevância todo dia
+    </footer>
+  </div>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init();
@@ -111,6 +113,28 @@
         links.style.display = 'flex';
       }
     }
+    const signupForm = document.getElementById('signupForm');
+    const loginForm = document.getElementById('loginForm');signupForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  localStorage.setItem('loggedIn', 'true');
+  showContent();
+});
+
+loginForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  localStorage.setItem('loggedIn', 'true');
+  showContent();
+});
+
+function showContent() {
+  document.getElementById('authSection').style.display = 'none';
+  document.getElementById('mainContent').style.display = 'block';
+}
+
+if (localStorage.getItem('loggedIn') === 'true') {
+  showContent();
+}
+
   </script>
 </body>
 </html>

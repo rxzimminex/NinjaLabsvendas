@@ -1,143 +1,64 @@
-<!DOCTYPE html><html lang="pt-BR">
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>InsanityUp - Serviços</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Inter', sans-serif;
-    }
-    body {
-      background: #0f172a;
-      color: #fff;
-      padding: 2rem;
-    }
-    header {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-    header h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
-    }
-    header p {
-      margin-top: 0.5rem;
-      color: #cbd5e1;
-    }
-    .menu {
-      text-align: center;
-      margin-top: 3rem;
-    }
-    .menu button {
-      background: #6b21a8;
-      color: #fff;
-      padding: 1.25rem 2.5rem;
-      margin: 1rem;
-      border: none;
-      border-radius: 0.75rem;
-      cursor: pointer;
-      font-size: 1.25rem;
-      font-weight: 600;
-      transition: background 0.3s, transform 0.2s;
-    }
-    .menu button:hover {
-      background: #7e22ce;
-      transform: scale(1.05);
-    }
-    .submenu {
-      display: none;
-      background: #1e1b2e;
-      border-radius: 1rem;
-      padding: 2rem;
-      margin-top: 2rem;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-      box-shadow: 0 0 20px rgba(0,0,0,0.2);
-    }
-    .submenu h3 {
-      margin-bottom: 1.5rem;
-      font-size: 1.75rem;
-      color: #c084fc;
-    }
-    .product {
-      margin-bottom: 2rem;
-      text-align: center;
-    }
-    .product p {
-      font-size: 1.125rem;
-      margin-bottom: 1rem;
-      color: #e5e7eb;
-    }
-    .product a {
-      display: inline-block;
-      background: #c084fc;
-      color: #1e1b2e;
-      padding: 0.75rem 1.5rem;
-      border-radius: 0.5rem;
-      font-weight: 600;
-      text-decoration: none;
-      transition: background 0.3s, transform 0.2s;
-    }
-    .product a:hover {
-      background: #a855f7;
-      transform: scale(1.05);
-    }
-    footer {
-      margin-top: 3rem;
-      text-align: center;
-      font-size: 0.875rem;
-      color: #94a3b8;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NinjaLabs | Cresça seu negócio</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
-    <h1>InsanityUp</h1>
-    <p>Serviços de crescimento para redes sociais</p>
-  </header>  <div class="menu">
-    <button onclick="toggleMenu('instagram')">Seguidores Instagram</button>
-    <button onclick="toggleMenu('tiktok')">Seguidores TikTok</button><div id="instagram" class="submenu">
-  <h3>Instagram</h3>
-  <div class="product">
-    <p>80 seguidores reais e ativos — <strong>R$ 4,90</strong></p>
-    <a href="https://wa.me/message/VFKB3THTP2G5I1" target="_blank">Comprar</a>
-  </div>
-  <div class="product">
-    <p>500 seguidores reais e ativos — <strong>R$ 11,00</strong></p>
-    <a href="https://wa.me/message/VFKB3THTP2G5I1" target="_blank">Comprar</a>
-  </div>
-</div>
+    <div class="container">
+      <h1 class="logo">NinjaLabs</h1>
+      <p class="slogan">Venha crescer seu negócio com a ninja</p>
+    </div>
+  </header>
 
-<div id="tiktok" class="submenu">
-  <h3>TikTok</h3>
-  <div class="product">
-    <p>80 seguidores reais e ativos — <strong>R$ 4,90</strong></p>
-    <a href="https://wa.me/message/VFKB3THTP2G5I1" target="_blank">Comprar</a>
-  </div>
-  <div class="product">
-    <p>500 seguidores reais e ativos — <strong>R$ 11,00</strong></p>
-    <a href="https://wa.me/message/VFKB3THTP2G5I1" target="_blank">Comprar</a>
-  </div>
-</div>
+  <section class="hero">
+    <div class="container">
+      <h2>Impulsione seu negócio com tecnologia e marketing de ponta</h2>
+      <p>Sites, lojas virtuais, automações, consultorias e muito mais. Tudo em um só lugar.</p>
+      <a href="#contato" class="btn">Fale com a gente</a>
+    </div>
+  </section>
 
-  </div>  <footer>
-    © 2025 InsanityUp. Todos os direitos reservados.
-    desenvolvido e criado por Ryan
-  </footer>  <script>
-    function toggleMenu(id) {
-      const menus = document.querySelectorAll('.submenu');
-      menus.forEach(menu => {
-        if (menu.id === id) {
-          menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-        } else {
-          menu.style.display = 'none';
-        }
-      });
-    }
-  </script></body>
+  <section class="servicos">
+    <div class="container">
+      <h2>Nossos Serviços</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Criação de Sites</h3>
+          <p>Sites rápidos, bonitos e otimizados para vendas.</p>
+        </div>
+        <div class="card">
+          <h3>Marketing Digital</h3>
+          <p>Tráfego pago, SEO, redes sociais e estratégias de crescimento.</p>
+        </div>
+        <div class="card">
+          <h3>Automação</h3>
+          <p>Processos automáticos que economizam tempo e aumentam resultados.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato" class="contato">
+    <div class="container">
+      <h2>Contato e Suporte</h2>
+      <p>Estamos prontos para ajudar você a crescer!</p>
+      <ul>
+        <li>Email: <a href="mailto:xonebeastxx@gmail.com">xonebeastxx@gmail.com</a></li>
+        <li>WhatsApp: <a href="https://wa.me/5512982509357" target="_blank">+55 12 98250-9357</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 NinjaLabs. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
 </html>

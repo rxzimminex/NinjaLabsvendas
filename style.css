@@ -96,3 +96,44 @@ footer {
   text-align: center;
   padding: 15px 0;
 }
+.auth {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 2rem;
+}
+
+.auth .card {
+  background: white;
+  color: #1F2937;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  width: 300px;
+}
+
+.auth input {
+  display: block;
+  width: 100%;
+  margin: 0.5rem 0;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+}
+
+.auth button {
+  background: linear-gradient(90deg, #10B981, #22D3EE);
+  color: white;
+  padding: 0.75rem;
+  width: 100%;
+  border: none;
+  border-radius: 9999px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+.auth button:hover {
+  opacity: 0.9;
+}

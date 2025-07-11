@@ -104,6 +104,38 @@ h1 {
   background: #EA580C;
 }
 
+.socials {
+  text-align: center;
+  padding: 1rem 2rem;
+}
+
+.socials button {
+  background: #2563EB;
+  border: none;
+  color: white;
+  font-weight: bold;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.socials button:hover {
+  background: #1D4ED8;
+}
+
+.social-links {
+  margin-top: 1rem;
+  display: none;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.social-links a {
+  color: white;
+  text-decoration: underline;
+}
+
 footer {
   text-align: center;
   padding: 1rem;
@@ -118,42 +150,50 @@ footer {
     <h1>Cresça seu negócio com a Ninja</h1>
   </header>  <section class="plans">
     <div class="card" data-aos="fade-up">
-      <span class="badge">ALUNO</span>
+      <span class="badge">BÁSICO</span>
       <p>Website institucional com até 3 páginas, responsivo e otimizado para SEO.</p>
-      <p class="price">R$ 23,70/Mês</p>
+      <p class="price">R$ 499</p>
       <a href="https://wa.me/message/VFKB3THTP2G5I1" class="btn" target="_blank">Escolher Plano</a>
-    </div>
-    
-    <div class="card" data-aos="fade-up" data-aos-delay="100">
-  <span class="badge">AVANÇADO</span>
+    </div><div class="card" data-aos="fade-up" data-aos-delay="100">
+  <span class="badge">MAIS POPULAR</span>
   <p>Website completo com até 6 páginas, blog integrado e integrações com redes sociais.</p>
-  <p class="price">R$ 50,00/Mês</p>
+  <p class="price">R$ 999</p>
   <a href="https://wa.me/message/VFKB3THTP2G5I1" class="btn" target="_blank">Escolher Plano</a>
 </div>
 
 <div class="card" data-aos="fade-up" data-aos-delay="200">
-  <span class="badge">MESTRE</span>
+  <span class="badge">AVANÇADO</span>
   <p>Website personalizado, sistema de agendamento e área de login exclusiva.</p>
-  <p class="price">R$ 72,50/Mês</p>
+  <p class="price">R$ 1499</p>
   <a href="https://wa.me/message/VFKB3THTP2G5I1" class="btn" target="_blank">Escolher Plano</a>
 </div>
-    
-<div class="card" data-aos="fade-up" data-aos-delay="200">
-  <span class="badge">SENSEI</span>
-  <p> Website permanente com tudo incluso ___________________________________. </p>
-  <p class="price">R$ 95,00/perm</p>
-  <a href="https://wa.me/message/VFKB3THTP2G5I1" class="btn" target="_blank">Escolher Plano</a>
-</div>
-    
+
   </section>  <section class="support">
     <h2>Precisa de ajuda?</h2>
     <a href="mailto:xonebeastxx@gmail.com">Suporte por E-mail</a>
     <a href="https://wa.me/5512982509357" target="_blank">Suporte via WhatsApp</a>
+  </section>  <section class="socials">
+    <button onclick="toggleSocials()">Redes Sociais</button>
+    <div class="social-links" id="socialLinks">
+      <a href="https://www.instagram.com" target="_blank">Instagram</a>
+      <a href="https://www.facebook.com" target="_blank">Facebook</a>
+      <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+      <a href="https://www.twitter.com" target="_blank">Twitter</a>
+    </div>
   </section>  <footer>
     ninjaLabs, ajudas e relevância todo dia
   </footer>  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>  <script>
     AOS.init();
+
+    function toggleSocials() {
+      const links = document.getElementById('socialLinks');
+      if (links.style.display === 'flex') {
+        links.style.display = 'none';
+      } else {
+        links.style.display = 'flex';
+      }
+    }
   </script>
 </body>
-
+  
 </html>

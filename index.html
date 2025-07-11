@@ -77,6 +77,44 @@
     .btn:hover {
       background: #0ea5e9;
     }
+    .menu {
+      text-align: center;
+      margin-top: 3rem;
+    }
+    .menu button {
+      background: #334155;
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      margin: 0.5rem;
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .menu button:hover {
+      background: #475569;
+    }
+    .submenu {
+      display: none;
+      background: #1e293b;
+      border-radius: 0.5rem;
+      padding: 1rem;
+      margin-top: 1rem;
+      text-align: left;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .submenu h3 {
+      margin-bottom: 0.5rem;
+      color: #38bdf8;
+    }
+    .submenu ul {
+      list-style: none;
+    }
+    .submenu ul li {
+      margin-bottom: 0.5rem;
+    }
     footer {
       margin-top: 3rem;
       text-align: center;
@@ -120,8 +158,36 @@
       </ul>
       <a href="https://wa.me/message/VFKB3THTP2G5I1" class="btn" target="_blank">Assinar Premium</a>
     </div>
-  </section>  <footer>
+  </section>  <div class="menu">
+    <button onclick="toggleMenu('instagram')">Seguidores Instagram</button>
+    <button onclick="toggleMenu('tiktok')">Seguidores TikTok</button><div id="instagram" class="submenu">
+  <h3>Instagram</h3>
+  <ul>
+    <li>R$ 4,90 - 80 seguidores</li>
+    <li>R$ 11,00 - 500 seguidores</li>
+  </ul>
+</div>
+
+<div id="tiktok" class="submenu">
+  <h3>TikTok</h3>
+  <ul>
+    <li>R$ 4,90 - 80 seguidores</li>
+    <li>R$ 11,00 - 500 seguidores</li>
+  </ul>
+</div>
+
+  </div>  <footer>
     © 2025 InsanityUp. Todos os direitos reservados.
-  </footer>
-</body>
+  </footer>  <script>
+    function toggleMenu(id) {
+      const menus = document.querySelectorAll('.submenu');
+      menus.forEach(menu => {
+        if (menu.id === id) {
+          menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+        } else {
+          menu.style.display = 'none';
+        }
+      });
+    }
+  </script></body>
 </html>
